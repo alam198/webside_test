@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="bg-[#F7F4EF] text-[#292826]">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="sticky top-0 z-50 bg-[#292826]">
+
+        <nav class="max-w-[1440px] mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    h-20 flex items-center justify-between">
+
+            <a href="./index.html">
+                <img
+                    src="./images/logo.png"
+                    alt="Logo"
+                    class="h-9 w-auto"
+                >
+            </a>
+
+
+            <a href="./index.html#products"
+               class="flex items-center gap-2
+                      text-sm font-semibold text-white/80
+                      hover:text-white transition-colors">
+
+                ← Back to Products page
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- ================================================= -->
+        <!-- BREADCRUMB -->
+        <!-- ================================================= -->
+
+        <div class="max-w-[1440px] mx-auto
+                    px-6 sm:px-8 lg:px-12 xl:px-16
+                    pt-8 lg:pt-10">
+
+            <div class="flex items-center gap-2
+                        text-sm text-[#8B857E]">
+
+                <a href="./index.html"
+                   class="hover:text-[#76543B]">
+                    Home
+                </a>
+
+                <span>/</span>
+
+                <a href="./index.html#products"
+                   class="hover:text-[#76543B]">
+                    Products View
+                </a>
+
+                <span>/</span>
+
+                <span id="breadcrumb-name"
+                      class="text-[#292826]">
+                    Product
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- PRODUCT DETAILS -->
+        <!-- ================================================= -->
+
+        <section class="py-10 lg:py-16">
+
+            <div class="max-w-[1440px] mx-auto
+                        px-6 sm:px-8 lg:px-12 xl:px-16">
+
+
+                <div class="grid grid-cols-1
+                            lg:grid-cols-[1.1fr_0.9fr]
+                            gap-10 lg:gap-16 xl:gap-20">
+
+
+                    <!-- ================================================= -->
+                    <!-- LEFT : PRODUCT IMAGES -->
+                    <!-- ================================================= -->
+
+                    <div>
+
+
+                        <!-- MAIN IMAGE -->
+                        <div class="relative
+                                    bg-[#EDE7DE]
+                                    rounded-2xl
+                                    overflow-hidden
+                                    aspect-[4/4.5]">
+
+                            <img
+                                id="main-product-image"
+                                src=""
+                                alt=""
+                                class="w-full h-full
+                                       object-cover
+                                       transition-opacity duration-300"
+                            >
+
+
+                            <!-- IMAGE NUMBER -->
+                            <div class="absolute
+                                        bottom-5 right-5
+                                        bg-black/60
+                                        backdrop-blur
+                                        text-white
+                                        text-xs
+                                        px-3 py-2
+                                        rounded-full">
+
+                                <span id="current-image-number">1</span>
+                                /
+                                <span id="total-image-number">3</span>
+
+                            </div>
+
+
+                            <!-- PREVIOUS -->
+                            <button
+                                id="previous-image"
+                                type="button"
+                                class="absolute left-4
+                                       top-1/2 -translate-y-1/2
+                                       w-11 h-11
+                                       bg-white/90
+                                       rounded-full
+                                       shadow-md
+                                       flex items-center justify-center
+                                       hover:bg-white
+                                       transition">
+
+                                ←
+
+                            </button>
+
+
+                            <!-- NEXT -->
+                            <button
+                                id="next-image"
+                                type="button"
+                                class="absolute right-4
+                                       top-1/2 -translate-y-1/2
+                                       w-11 h-11
+                                       bg-white/90
+                                       rounded-full
+                                       shadow-md
+                                       flex items-center justify-center
+                                       hover:bg-white
+                                       transition">
+
+                                →
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- THUMBNAILS -->
+                        <div
+                            id="product-thumbnails"
+                            class="grid grid-cols-3 gap-3 mt-4">
+
+                            <!-- JS inserts images -->
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================================= -->
+                    <!-- RIGHT : PRODUCT INFORMATION -->
+                    <!-- ================================================= -->
+
+                    <div class="lg:sticky lg:top-28 lg:self-start">
+
+
+                        <!-- CATEGORY -->
+                        <p
+                            id="product-category"
+                            class="text-[#76543B]
+                                   text-xs font-bold
+                                   uppercase
+                                   tracking-[0.2em]">
+                        </p>
+
+
+
+                        <!-- NAME -->
+                        <h1
+                            id="product-name"
+                            class="text-3xl sm:text-4xl
+                                   lg:text-5xl
+                                   font-semibold
+                                   leading-tight
+                                   tracking-tight
+                                   mt-4">
+                        </h1>
+
+
+
+                        <!-- PRICE -->
+                        <div class="flex items-end gap-3 mt-6">
+
+                            <p
+                                id="product-price"
+                                class="text-2xl sm:text-3xl
+                                       font-semibold
+                                       text-[#76543B]">
+                            </p>
+
+                            <span class="text-sm text-[#8B857E] mb-1">
+                                Inclusive of all taxes
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+                        <p
+                            id="product-description"
+                            class="text-[#706C66]
+                                   leading-relaxed
+                                   text-base lg:text-lg
+                                   mt-7">
+                        </p>
+
+
+
+                        <div class="h-px bg-[#DDD5CB] my-8"></div>
+
+
+
+                        <!-- ================================================= -->
+                        <!-- COLOR -->
+                        <!-- ================================================= -->
+
+                        <div>
+
+                            <div class="flex items-center justify-between">
+
+                                <h3 class="font-semibold">
+                                    Select Color
+                                </h3>
+
+                                <span
+                                    id="selected-color-name"
+                                    class="text-sm text-[#706C66]">
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                id="product-colors"
+                                class="flex flex-wrap gap-3 mt-4">
+
+                                <!-- JS -->
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================================================= -->
+                        <!-- PRODUCT DETAILS -->
+                        <!-- ================================================= -->
+
+                        <div class="mt-8">
+
+                            <h3 class="font-semibold mb-5">
+                                Product Details
+                            </h3>
+
+
+                            <div class="border-y border-[#DDD5CB]">
+
+
+                                <!-- Material -->
+                                <div class="flex justify-between gap-5
+                                            py-4
+                                            border-b border-[#DDD5CB]">
+
+                                    <span class="text-[#8B857E]">
+                                        Material
+                                    </span>
+
+                                    <span
+                                        id="product-material"
+                                        class="font-medium text-right">
+                                    </span>
+
+                                </div>
+
+
+                                <!-- Dimensions -->
+                                <div class="flex justify-between gap-5
+                                            py-4
+                                            border-b border-[#DDD5CB]">
+
+                                    <span class="text-[#8B857E]">
+                                        Dimensions
+                                    </span>
+
+                                    <span
+                                        id="product-dimensions"
+                                        class="font-medium text-right">
+                                    </span>
+
+                                </div>
+
+
+                                <!-- Finish -->
+                                <div class="flex justify-between gap-5
+                                            py-4
+                                            border-b border-[#DDD5CB]">
+
+                                    <span class="text-[#8B857E]">
+                                        Finish
+                                    </span>
+
+                                    <span
+                                        id="product-finish"
+                                        class="font-medium text-right">
+                                    </span>
+
+                                </div>
+
+
+                                <!-- Delivery -->
+                                <div class="flex justify-between gap-5 py-4">
+
+                                    <span class="text-[#8B857E]">
+                                        Delivery
+                                    </span>
+
+                                    <span
+                                        id="product-delivery"
+                                        class="font-medium text-right">
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================================================= -->
+                        <!-- QUANTITY -->
+                        <!-- ================================================= -->
+
+                        <div class="mt-8">
+
+                            <h3 class="font-semibold mb-4">
+                                Quantity
+                            </h3>
+
+
+                            <div class="inline-flex items-center
+                                        border border-[#D8D0C5]
+                                        rounded-lg overflow-hidden">
+
+
+                                <button
+                                    id="quantity-minus"
+                                    type="button"
+                                    class="w-12 h-12
+                                           hover:bg-[#EDE7DE]
+                                           transition">
+                                    −
+                                </button>
+
+
+                                <span
+                                    id="quantity"
+                                    class="w-12 text-center
+                                           font-semibold">
+                                    1
+                                </span>
+
+
+                                <button
+                                    id="quantity-plus"
+                                    type="button"
+                                    class="w-12 h-12
+                                           hover:bg-[#EDE7DE]
+                                           transition">
+                                    +
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ================================================= -->
+                        <!-- BUY BUTTON -->
+                        <!-- ================================================= -->
+
+                        <div class="mt-8">
+
+
+                            <button
+                                id="buy-now"
+                                type="button"
+                                class="w-full
+                                       bg-[#76543B]
+                                       text-white
+                                       px-8 py-4
+                                       rounded-lg
+                                       text-base font-semibold
+                                       hover:bg-[#60432F]
+                                       transition-all duration-300">
+
+                                Buy Now
+
+                            </button>
+
+
+                            <button
+                                id="enquire-now"
+                                type="button"
+                                class="w-full
+                                       mt-3
+                                       border border-[#76543B]
+                                       text-[#76543B]
+                                       px-8 py-4
+                                       rounded-lg
+                                       font-semibold
+                                       hover:bg-[#76543B]
+                                       hover:text-white
+                                       transition-all duration-300">
+
+                                Enquire on WhatsApp
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- TRUST -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+
+
+                            <div class="flex items-center gap-3">
+
+                                <div class="w-9 h-9
+                                            bg-[#EDE7DE]
+                                            rounded-full
+                                            flex items-center justify-center">
+
+                                    ✓
+
+                                </div>
+
+                                <span class="text-sm text-[#706C66]">
+                                    Quality Checked
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-3">
+
+                                <div class="w-9 h-9
+                                            bg-[#EDE7DE]
+                                            rounded-full
+                                            flex items-center justify-center">
+
+                                    ✓
+
+                                </div>
+
+                                <span class="text-sm text-[#706C66]">
+                                    Secure Purchase
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- PRODUCT DESCRIPTION -->
+        <!-- ================================================= -->
+
+        <section class="bg-[#EEE8DF] py-16 lg:py-20">
+
+            <div class="max-w-[1440px] mx-auto
+                        px-6 sm:px-8 lg:px-12 xl:px-16">
+
+
+                <div class="grid grid-cols-1
+                            lg:grid-cols-[0.6fr_1.4fr]
+                            gap-8 lg:gap-20">
+
+
+                    <div>
+
+                        <p class="text-[#76543B]
+                                  text-xs font-bold
+                                  uppercase
+                                  tracking-[0.2em]">
+
+                            Details
+
+                        </p>
+
+                        <h2 class="text-3xl lg:text-4xl
+                                   font-semibold mt-4">
+
+                            Designed for
+                            Everyday Living.
+
+                        </h2>
+
+                    </div>
+
+
+                    <div>
+
+                        <p
+                            id="product-long-description"
+                            class="text-[#706C66]
+                                   text-base lg:text-lg
+                                   leading-relaxed">
+                        </p>
+
+
+                        <!-- FEATURES -->
+                        <div
+                            id="product-features"
+                            class="grid grid-cols-1 sm:grid-cols-2
+                                   gap-x-10 gap-y-4 mt-8">
+
+                            <!-- JS -->
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- RELATED PRODUCTS -->
+        <!-- ================================================= -->
+
+        <section class="py-20 lg:py-28">
+
+            <div class="max-w-[1440px] mx-auto
+                        px-6 sm:px-8 lg:px-12 xl:px-16">
+
+
+                <!-- Header -->
+                <div class="flex items-end
+                            justify-between
+                            gap-5 mb-10">
+
+                    <div>
+
+                        <p class="text-[#76543B]
+                                  text-xs font-bold
+                                  uppercase
+                                  tracking-[0.2em]">
+
+                            You May Also Like
+
+                        </p>
+
+                        <h2 class="text-3xl lg:text-4xl
+                                   font-semibold mt-3">
+
+                            Related Products
+
+                        </h2>
+
+                    </div>
+
+
+                    <a href="./index.html#products"
+                       class="hidden sm:inline-flex
+                              text-[#76543B]
+                              font-semibold">
+
+                        View All →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- PRODUCTS -->
+                <div
+                    id="related-products"
+                    class="grid grid-cols-1
+                           sm:grid-cols-2
+                           lg:grid-cols-4
+                           gap-6">
+
+                    <!-- JS -->
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+<footer class="bg-[#292826] text-white">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- Main Footer -->
+        <div class="py-16 lg:py-20
+                    grid grid-cols-1 sm:grid-cols-2
+                    lg:grid-cols-[1.5fr_0.7fr_0.7fr_1fr]
+                    gap-12 lg:gap-16">
+
+
+            <!-- ================= BRAND ================= -->
+            <div>
+
+                <!-- Replace with your logo -->
+                <a href="#" class="inline-block">
+                    <img
+                        src="./images/logo.png"
+                        alt="Furniture Logo"
+                        class="h-10 w-auto brightness-0 invert"
+                    >
+                </a>
+
+                <p class="mt-6 max-w-sm
+                          text-[#AAA59F]
+                          leading-relaxed">
+
+                    Thoughtfully designed furniture,
+                    handcrafted with premium materials
+                    to bring comfort, character and
+                    lasting beauty to your space.
+
+                </p>
+
+
+                <!-- Social -->
+                <div class="flex items-center gap-3 mt-7">
+
+                    <!-- Instagram -->
+                    <a href="#"
+                       aria-label="Instagram"
+                       class="w-10 h-10 rounded-full
+                              border border-white/15
+                              flex items-center justify-center
+                              text-white/70
+                              hover:bg-[#76543B]
+                              hover:border-[#76543B]
+                              hover:text-white
+                              transition-all duration-300">
+
+                        <svg class="w-4 h-4"
+                             fill="none"
+                             stroke="currentColor"
+                             viewBox="0 0 24 24">
+
+                            <rect x="3" y="3"
+                                  width="18" height="18"
+                                  rx="5"
+                                  stroke-width="1.8"/>
+
+                            <circle cx="12" cy="12"
+                                    r="4"
+                                    stroke-width="1.8"/>
+
+                            <circle cx="17.5" cy="6.5"
+                                    r="1"
+                                    fill="currentColor"
+                                    stroke="none"/>
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- Facebook -->
+                    <a href="#"
+                       aria-label="Facebook"
+                       class="w-10 h-10 rounded-full
+                              border border-white/15
+                              flex items-center justify-center
+                              text-white/70
+                              hover:bg-[#76543B]
+                              hover:border-[#76543B]
+                              hover:text-white
+                              transition-all duration-300">
+
+                        <span class="font-bold">f</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LINKS ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Explore
+                </h3>
+
+                <ul class="space-y-4 text-[#AAA59F]">
+
+                    <li>
+                        <a href="#"
+                           class="hover:text-white transition-colors">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services"
+                           class="hover:text-white transition-colors">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#products"
+                           class="hover:text-white transition-colors">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects"
+                           class="hover:text-white transition-colors">
+                            Projects
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ================= COMPANY ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Company
+                </h3>
+
+                <ul class="space-y-4 text-[#AAA59F]">
+
+                    <li>
+                        <a href="#why-us"
+                           class="hover:text-white transition-colors">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#process"
+                           class="hover:text-white transition-colors">
+                            Our Process
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#testimonials"
+                           class="hover:text-white transition-colors">
+                            Reviews
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact"
+                           class="hover:text-white transition-colors">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ================= CONTACT ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Get in Touch
+                </h3>
+
+
+                <p class="text-[#AAA59F]
+                          text-sm leading-relaxed mb-5">
+
+                    Have a project in mind?
+                    Talk to us about your furniture
+                    requirements.
+
+                </p>
+
+
+                <!-- Phone -->
+                <a href="tel:+918108582270"
+                   class="block text-white
+                          font-medium
+                          hover:text-[#C6A98B]
+                          transition-colors">
+
+                    +91 81085 82270
+
+                </a>
+
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20your%20furniture%20services."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2
+                          mt-6
+                          text-[#C6A98B]
+                          font-semibold
+                          hover:text-white
+                          transition-colors">
+
+                    Chat on WhatsApp
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BOTTOM ================= -->
+        <div class="border-t border-white/10
+                    py-6
+                    flex flex-col sm:flex-row
+                    sm:items-center sm:justify-between
+                    gap-4
+                    text-sm text-[#77736E]">
+
+            <p>
+                © 2026 Your Furniture Company. All rights reserved.
+            </p>
+
+
+            <div class="flex items-center gap-6">
+
+                <a href="#"
+                   class="hover:text-white transition-colors">
+                    Privacy Policy
+                </a>
+
+                <a href="#"
+                   class="hover:text-white transition-colors">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <!-- Product JS -->
+    <script src="./productView.js"></script>
+
+</body>
+</html>
