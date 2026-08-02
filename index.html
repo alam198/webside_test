@@ -1,0 +1,3059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO -->
+    <title>My App</title>
+    <meta name="description" content="My Application" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Tailwind" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --background: #F7F4EF;
+            --surface: #FFFFFF;
+            --section: #EDE7DE;
+
+            --text: #292826;
+            --text-muted: #706C66;
+
+            --primary: #76543B;
+            --primary-hover: #5A3D2B;
+
+            --border: #D8D0C5;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 ">
+
+    <!-- App Root -->
+    <div id="app" class="min-h-screen mx-auto bg-[#F7F4EF] ">
+
+        <header class="sticky top-0 z-50 bg-gray-900">
+            <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img src="./images/logo.png" alt="" class="h-8 w-auto" />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <el-popover-group class="hidden lg:flex lg:gap-x-12">
+                    <a href="#" class="text-sm/6 font-semibold text-white">Home</a>
+                  <a href="#products" class="text-sm/6 font-semibold text-white">Products</a>
+                    <a href="#services" class="text-sm/6 font-semibold text-white">Services</a>
+                    <a href="#why-us" class="text-sm/6 font-semibold text-white">About Us</a>
+                    <a href="#contact" class="text-sm/6 font-semibold text-white">Contact</a>
+                </el-popover-group>
+
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" class="text-sm/6 font-semibold text-white">Log in <span
+                            aria-hidden="true">&rarr;</span></a>
+                </div>
+            </nav>
+            <el-dialog>
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel
+                            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <span class="sr-only">Your Company</span>
+                                    <img src="./images/logo.png" alt="" class="h-8 w-auto" />
+                                </a>
+                                <button type="button" command="close" commandfor="mobile-menu"
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-400">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true" class="size-6">
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-white/10">
+                                    <div class="space-y-2 py-6">
+
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Home</a>
+                                        <a href="#services"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Services</a>
+                                        <a href="#why-us"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">About
+                                            Us</a>
+                                        <a href="#contact"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Contact</a>
+                                    </div>
+                                    <div class="py-6">
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Log
+                                            in</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-[#F7F4EF]">
+
+            <!-- Decorative background -->
+            <div class="absolute top-0 right-0 w-[40%] h-full bg-[#EDE7DE]/60 hidden lg:block"></div>
+
+            <div class="relative max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16
+                py-16 md:py-20 lg:py-28">
+
+                <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]
+                    items-center gap-14 lg:gap-20">
+
+                    <!-- ================= LEFT CONTENT ================= -->
+                    <div class="text-center lg:text-left">
+
+                        <!-- Small Label -->
+                        <div class="flex justify-center lg:justify-start items-center gap-3 mb-6">
+
+                            <span class="w-10 h-[1px] bg-[#76543B]"></span>
+
+                            <span class="text-xs sm:text-sm font-semibold uppercase
+                                 tracking-[0.22em] text-[#76543B]">
+                                Premium Furniture & Interiors
+                            </span>
+
+                        </div>
+
+
+                        <!-- Heading -->
+                        <h1 class="text-[2.7rem] sm:text-5xl md:text-6xl
+                           lg:text-[4.4rem] xl:text-[5rem]
+                           font-semibold leading-[1.05]
+                           tracking-[-0.04em] text-[#292826]">
+
+                            Crafted Furniture
+                            <span class="block text-[#76543B]">
+                                Made for Your Space.
+                            </span>
+
+                        </h1>
+
+
+                        <!-- Description -->
+                        <p class="mt-7 lg:mt-8 max-w-2xl mx-auto lg:mx-0
+                          text-base sm:text-lg lg:text-xl
+                          leading-[1.7] text-[#706C66]">
+
+                            Thoughtfully designed furniture, expert craftsmanship
+                            and premium finishes that bring warmth, comfort and
+                            timeless character to your home.
+
+                        </p>
+
+
+                        <!-- Buttons -->
+                        <div class="mt-9 lg:mt-10 flex flex-col sm:flex-row
+                            justify-center lg:justify-start gap-4">
+
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20your%20furniture%20services.%20I%20would%20like%20to%20book%20a%20consultation."
+                                target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3
+                              px-7 py-4 rounded-lg
+                              bg-[#76543B] text-white
+                              font-semibold
+                              hover:bg-[#5A3D2B]
+                              hover:-translate-y-0.5
+                              transition-all duration-300">
+
+                                Book a Consultation
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" class="w-5 h-5">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                        d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+
+                            </a>
+
+
+                            <!-- Explore -->
+                            <a href="#services" class="inline-flex items-center justify-center gap-2
+                              px-7 py-4 rounded-lg
+                              border border-[#D8D0C5]
+                              bg-white/60 text-[#292826]
+                              font-semibold
+                              hover:bg-white
+                              transition-all duration-300">
+
+                                Explore Our Work
+
+                                <span>↓</span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- Customer Trust -->
+                        <div class="mt-10 lg:mt-12 pt-8
+                            border-t border-[#D8D0C5]
+                            flex flex-col sm:flex-row
+                            items-center justify-center lg:justify-start
+                            gap-5">
+
+                            <!-- Customer Images -->
+                            <div class="flex pl-3">
+
+                                <img src="https://prayagtandon.github.io/Omnifood-Project/Hero-section/img/customers/customer-1.jpg"
+                                    class="w-11 h-11 rounded-full object-cover
+                                   -ml-3 border-2 border-[#F7F4EF]
+                                   blur-[1px] opacity-80" alt="Customer" />
+
+                                <img src="https://prayagtandon.github.io/Omnifood-Project/Hero-section/img/customers/customer-2.jpg"
+                                    class="w-11 h-11 rounded-full object-cover
+                                   -ml-3 border-2 border-[#F7F4EF]
+                                   blur-[1px] opacity-80" alt="Customer" />
+
+                                <img src="https://prayagtandon.github.io/Omnifood-Project/Hero-section/img/customers/customer-3.jpg"
+                                    class="w-11 h-11 rounded-full object-cover
+                                   -ml-3 border-2 border-[#F7F4EF]
+                                   blur-[1px] opacity-80" alt="Customer" />
+
+                                <img src="https://prayagtandon.github.io/Omnifood-Project/Hero-section/img/customers/customer-4.jpg"
+                                    class="w-11 h-11 rounded-full object-cover
+                                   -ml-3 border-2 border-[#F7F4EF]
+                                   blur-[1px] opacity-80" alt="Customer" />
+
+                            </div>
+
+
+                            <!-- Trust Text -->
+                            <div class="text-center sm:text-left">
+
+                                <div class="flex justify-center sm:justify-start
+                                    items-center gap-1 text-[#76543B]
+                                    text-sm mb-1">
+                                    ★ ★ ★ ★ ★
+                                </div>
+
+                                <p class="text-sm sm:text-base text-[#706C66]">
+                                    Trusted by
+                                    <span class="font-bold text-[#292826]">
+                                        10,000+ customers
+                                    </span>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= RIGHT IMAGE ================= -->
+                    <div class="relative">
+
+                        <!-- Main image -->
+                        <div class="relative overflow-hidden rounded-[2rem]">
+
+                            <img src="./images/hero.png" alt="Premium custom furniture and interior" class="w-full h-[430px] sm:h-[550px]
+                               lg:h-[650px] object-cover" />
+
+                            <!-- subtle image overlay -->
+                            <div class="absolute inset-0
+                                bg-gradient-to-t
+                                from-[#292826]/20
+                                via-transparent
+                                to-transparent">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Floating Quality Card -->
+                        <div class="absolute bottom-5 left-5
+                            sm:bottom-8 sm:left-8
+                            bg-[#F7F4EF]/95 backdrop-blur-md
+                            rounded-xl
+                            px-5 py-4 sm:px-6 sm:py-5
+                            shadow-lg">
+
+                            <p class="text-[11px] uppercase tracking-[0.18em]
+                              font-semibold text-[#76543B] mb-1">
+                                Our Promise
+                            </p>
+
+                            <p class="text-sm sm:text-base
+                              font-semibold text-[#292826]">
+                                Crafted with precision.
+                                <br>
+                                Finished to perfection.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Small decorative box -->
+                        <div class="absolute -right-5 -top-5
+                            w-24 h-24
+                            border border-[#76543B]/30
+                            rounded-2xl -z-10
+                            hidden lg:block">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Services Section -->
+        <section id="services" class="bg-[#EDE7DE] py-20 lg:py-28">
+            <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+                <!-- Section Header -->
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+
+                    <div class="max-w-3xl">
+                        <p class="text-[#76543B] text-sm font-bold uppercase tracking-[0.25em] mb-4">
+                            Our Expertise
+                        </p>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#292826]">
+                            Furniture Crafted with
+                            <span class="text-[#76543B]">Purpose & Precision.</span>
+                        </h2>
+                    </div>
+
+                    <p class="max-w-xl text-base lg:text-lg leading-relaxed text-[#706C66]">
+                        From custom-made furniture to premium finishing and polishing,
+                        we create beautiful pieces designed to elevate your space.
+                    </p>
+
+                </div>
+
+
+                <!-- Service Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Custom Furniture -->
+                    <div class="group relative h-[430px] lg:h-[500px] rounded-2xl overflow-hidden cursor-pointer">
+
+                        <img src="./images/custom-furniture.png" alt="Custom Furniture" class="absolute inset-0 w-full h-full object-cover
+                   group-hover:scale-110 transition-transform duration-700" />
+
+                        <!-- Gradient -->
+                        <div class="absolute inset-0
+                   bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                        </div>
+
+                        <!-- Number -->
+                        <span class="absolute top-6 left-6 text-white/80
+                   text-sm font-semibold tracking-widest">
+                            01
+                        </span>
+
+                        <!-- Content -->
+                        <div class="absolute bottom-0 left-0 right-0 p-7 lg:p-9">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+                                Custom Furniture
+                            </h3>
+
+                            <p class="text-white/80 leading-relaxed mb-5">
+                                Bespoke furniture designed and crafted to perfectly
+                                complement your space and lifestyle.
+                            </p>
+
+                            <a href="#contact" class="inline-flex items-center gap-2 text-white font-semibold">
+                                Explore Service
+                                <span class="group-hover:translate-x-2 transition-transform">
+                                    →
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Premium Finishing -->
+                    <div class="group relative h-[430px] lg:h-[500px] rounded-2xl overflow-hidden cursor-pointer">
+
+                        <img src="./images/furniture-finishing.jpeg" alt="Premium Furniture Finishing" class="absolute inset-0 w-full h-full object-cover
+                   group-hover:scale-110 transition-transform duration-700" />
+
+                        <div class="absolute inset-0
+                   bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                        </div>
+
+                        <span class="absolute top-6 left-6 text-white/80
+                   text-sm font-semibold tracking-widest">
+                            02
+                        </span>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-7 lg:p-9">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+                                Premium Finishing
+                            </h3>
+
+                            <p class="text-white/80 leading-relaxed mb-5">
+                                Refined finishes that enhance the natural beauty,
+                                texture and durability of your furniture.
+                            </p>
+
+                            <a href="#contact" class="inline-flex items-center gap-2 text-white font-semibold">
+                                Explore Service
+                                <span class="group-hover:translate-x-2 transition-transform">
+                                    →
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Furniture Polishing -->
+                    <div class="group relative h-[430px] lg:h-[500px] rounded-2xl overflow-hidden cursor-pointer">
+
+                        <img src="./images/furniture-polishing.jpeg" alt="Furniture Polishing" class="absolute inset-0 w-full h-full object-cover
+                   group-hover:scale-110 transition-transform duration-700" />
+
+                        <div class="absolute inset-0
+                   bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                        </div>
+
+                        <span class="absolute top-6 left-6 text-white/80
+                   text-sm font-semibold tracking-widest">
+                            03
+                        </span>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-7 lg:p-9">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+                                Furniture Polishing
+                            </h3>
+
+                            <p class="text-white/80 leading-relaxed mb-5">
+                                Professional polishing and restoration that brings
+                                back the elegance and shine of your furniture.
+                            </p>
+
+                            <a href="#contact" class="inline-flex items-center gap-2 text-white font-semibold">
+                                Explore Service
+                                <span class="group-hover:translate-x-2 transition-transform">
+                                    →
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Bottom CTA -->
+                <div class="mt-12 lg:mt-16 flex justify-center">
+
+                    <a href="#contact" class="inline-flex items-center gap-3 bg-[#76543B] text-white
+                       px-7 py-4 rounded-lg font-semibold
+                       hover:bg-[#5A3D2B] transition-colors duration-300">
+
+                        Explore Our Services
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- ================= OUR PRODUCTS ================= -->
+        <section id="products" class="bg-[#F7F4EF] py-20 lg:py-28">
+
+            <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+                <!-- Header -->
+                <div class="flex flex-col lg:flex-row lg:items-end
+                    lg:justify-between gap-6 mb-10 lg:mb-14">
+
+                    <div class="max-w-2xl">
+
+                        <p class="text-[#76543B] text-sm font-bold uppercase
+                          tracking-[0.22em] mb-4">
+                            Our Collection
+                        </p>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl
+                           font-semibold tracking-tight
+                           leading-tight text-[#292826]">
+
+                            Furniture Made for
+                            <span class="text-[#76543B]">
+                                Modern Living.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+                    <p class="max-w-lg text-[#706C66]
+                      text-base lg:text-lg leading-relaxed">
+
+                        Discover thoughtfully crafted furniture designed
+                        to bring comfort, character and timeless elegance
+                        into your space.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ================= CATEGORY FILTER ================= -->
+                <div class="flex gap-3 overflow-x-auto pb-3 mb-10">
+
+                    <button data-filter="all" class="product-filter shrink-0 px-6 py-3 rounded-full
+               bg-[#76543B] text-white
+               border border-[#76543B]
+               text-sm font-semibold
+               transition-all duration-300">
+                        All
+                    </button>
+
+                    <button data-filter="sofa" class="product-filter shrink-0 px-6 py-3 rounded-full
+               border border-[#D8D0C5]
+               text-[#706C66]
+               text-sm font-semibold
+               hover:border-[#76543B]
+               transition-all duration-300">
+                        Sofas
+                    </button>
+
+                    <button data-filter="chair" class="product-filter shrink-0 px-6 py-3 rounded-full
+               border border-[#D8D0C5]
+               text-[#706C66]
+               text-sm font-semibold
+               hover:border-[#76543B]
+               transition-all duration-300">
+                        Chairs
+                    </button>
+
+                    <button data-filter="table" class="product-filter shrink-0 px-6 py-3 rounded-full
+               border border-[#D8D0C5]
+               text-[#706C66]
+               text-sm font-semibold
+               hover:border-[#76543B]
+               transition-all duration-300">
+                        Tables
+                    </button>
+
+                    <button data-filter="bed" class="product-filter shrink-0 px-6 py-3 rounded-full
+               border border-[#D8D0C5]
+               text-[#706C66]
+               text-sm font-semibold
+               hover:border-[#76543B]
+               transition-all duration-300">
+                        Beds
+                    </button>
+
+
+                    <button data-filter="living" class="product-filter shrink-0 px-6 py-3 rounded-full
+               border border-[#D8D0C5]
+               text-[#706C66]
+               text-sm font-semibold
+               hover:border-[#76543B]
+               transition-all duration-300">
+                        Living Area
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= PRODUCTS GRID ================= -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+
+
+
+                    <!-- PRODUCT 01 - SOFA -->
+
+                    <article class="product-card group" data-category="sofa">
+
+                        <!-- Product Slider -->
+                        <div class="product-slider relative bg-[#EDE7DE] rounded-2xl overflow-hidden aspect-[4/5]"
+                            data-product-slider>
+
+                            <!-- Images -->
+                            <img src="./images/sofa1-1.jpeg" alt="Walnut Comfort Sofa" class="product-slide absolute inset-0
+                        w-full h-full object-cover
+                        opacity-100 transition-opacity duration-500">
+
+                            <img src="./images/sofa1-2.jpeg" alt="Walnut Comfort Sofa" class="product-slide absolute inset-0
+                        w-full h-full object-cover
+                        opacity-0 transition-opacity duration-500">
+
+                            <img src="./images/sofa1-3.jpeg" alt="Walnut Comfort Sofa" class="product-slide absolute inset-0
+                        w-full h-full object-cover
+                        opacity-0 transition-opacity duration-500">
+
+
+                            <!-- Badge -->
+                            <span class="absolute z-20 top-4 left-4
+                         bg-[#F7F4EF]/95 backdrop-blur
+                         text-[#76543B]
+                         text-[10px] font-bold tracking-wider
+                         px-3 py-2 rounded-full">
+                                BESTSELLER
+                            </span>
+
+
+                            <!-- Previous -->
+                            <button type="button" data-product-prev class="absolute z-20 left-3 top-1/2
+                           -translate-y-1/2
+                           w-9 h-9 rounded-full
+                           bg-white/90
+                           flex items-center justify-center
+                           shadow-md
+                           opacity-0 group-hover:opacity-100
+                           transition-all">
+                                ←
+                            </button>
+
+
+                            <!-- Next -->
+                            <button type="button" data-product-next class="absolute z-20 right-3 top-1/2
+                           -translate-y-1/2
+                           w-9 h-9 rounded-full
+                           bg-white/90
+                           flex items-center justify-center
+                           shadow-md
+                           opacity-0 group-hover:opacity-100
+                           transition-all">
+                                →
+                            </button>
+
+
+                            <!-- Dots -->
+                            <div class="absolute z-20 bottom-4
+                        left-1/2 -translate-x-1/2
+                        flex gap-1.5">
+
+                                <button data-product-dot="0" class="product-dot w-6 h-1
+                               rounded-full bg-white">
+                                </button>
+
+                                <button data-product-dot="1" class="product-dot w-2 h-1
+                               rounded-full bg-white/50">
+                                </button>
+
+                                <button data-product-dot="2" class="product-dot w-2 h-1
+                               rounded-full bg-white/50">
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Info -->
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em]
+                      text-[#9A9288] mb-2">
+                                Sofa
+                            </p>
+
+                            <div class="flex justify-between items-start gap-3">
+
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Walnut Comfort Sofa
+                                </h3>
+
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">
+                                    ₹45,000
+                                </p>
+
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Walnut%20Comfort%20Sofa."
+                                target="_blank" class="inline-flex gap-2 mt-4
+                      text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 02 - SOFA -->
+                    <article class="product-card group" data-category="sofa">
+
+                        <div class="product-slider relative bg-[#EDE7DE]
+                    rounded-2xl overflow-hidden aspect-[4/5]" data-product-slider>
+
+                            <img src="./images/sofa2-1.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-100 transition-opacity duration-500">
+
+                            <img src="./images/sofa2-2.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-0 transition-opacity duration-500">
+
+                            <img src="./images/sofa2-3.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-0 transition-opacity duration-500">
+
+
+                            <img src="./images/sofa2-1.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-100 transition-opacity duration-500">
+
+                            <img src="./images/sofa2-2.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-0 transition-opacity duration-500">
+
+                            <img src="./images/sofa2-3.jpeg" class="product-slide absolute inset-0 w-full h-full
+                        object-cover opacity-0 transition-opacity duration-500">
+
+                            <span class="absolute z-20 top-4 left-4
+                         bg-[#76543B] text-white
+                         text-[10px] font-bold
+                         px-3 py-2 rounded-full">
+                                NEW
+                            </span>
+
+                            <button type="button" data-product-prev class="absolute z-20 left-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full shadow
+                           opacity-0 group-hover:opacity-100 transition-all">
+                                ←
+                            </button>
+
+                            <button type="button" data-product-next class="absolute z-20 right-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full shadow
+                           opacity-0 group-hover:opacity-100 transition-all">
+                                →
+                            </button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2
+                        -translate-x-1/2 flex gap-1.5">
+
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em]
+                      text-[#9A9288] mb-2">
+                                Sofa
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Modern Linen Sofa
+                                </h3>
+
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">
+                                    ₹52,000
+                                </p>
+
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Modern%20Linen%20Sofa."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCT 03 - CHAIR -->
+                    <article class="product-card group" data-category="chair">
+
+                        <div class="product-slider relative bg-[#EDE7DE]
+                    rounded-2xl overflow-hidden aspect-[4/5]" data-product-slider>
+
+                            <img src="./images/chair1-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+
+                            <img src="./images/chair1-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <img src="./images/chair1-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev class="absolute z-20 left-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full
+                           opacity-0 group-hover:opacity-100 transition-all">
+                                ←
+                            </button>
+
+                            <button type="button" data-product-next class="absolute z-20 right-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full
+                           opacity-0 group-hover:opacity-100 transition-all">
+                                →
+                            </button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Chair
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Oak Lounge Chair
+                                </h3>
+
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">
+                                    ₹18,500
+                                </p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Oak%20Lounge%20Chair."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRODUCT 04 - CHAIR -->
+                    <!-- ================================================= -->
+                    <article class="product-card group" data-category="chair">
+
+                        <div class="product-slider relative bg-[#EDE7DE]
+                    rounded-2xl overflow-hidden aspect-[4/5]" data-product-slider>
+
+                            <img src="./images/chair2-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+
+                            <img src="./images/chair2-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <img src="./images/chair2-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev class="absolute z-20 left-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full
+                           opacity-0 group-hover:opacity-100 transition-all">←</button>
+
+                            <button type="button" data-product-next class="absolute z-20 right-3 top-1/2 -translate-y-1/2
+                           w-9 h-9 bg-white/90 rounded-full
+                           opacity-0 group-hover:opacity-100 transition-all">→</button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Chair
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Accent Armchair
+                                </h3>
+
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">
+                                    ₹21,000
+                                </p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Accent%20Armchair."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRODUCT 05 - TABLE -->
+                    <!-- ================================================= -->
+                    <article class="product-card group" data-category="table">
+
+                        <div class="product-slider relative bg-[#EDE7DE] rounded-2xl overflow-hidden aspect-[4/5]"
+                            data-product-slider>
+
+                            <img src="./images/table1-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+                            <img src="./images/table1-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                            <img src="./images/table1-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev
+                                class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">←</button>
+                            <button type="button" data-product-next
+                                class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">→</button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Table
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Solid Wood Dining Table
+                                </h3>
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">₹32,000</p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Solid%20Wood%20Dining%20Table."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRODUCT 06 - TABLE -->
+                    <!-- ================================================= -->
+                    <article class="product-card group" data-category="table">
+
+                        <div class="product-slider relative bg-[#EDE7DE] rounded-2xl overflow-hidden aspect-[4/5]"
+                            data-product-slider>
+
+                            <img src="./images/table2-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+                            <img src="./images/table2-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                            <img src="./images/table2-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev
+                                class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">←</button>
+                            <button type="button" data-product-next
+                                class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">→</button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Table
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Walnut Coffee Table
+                                </h3>
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">₹15,500</p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Walnut%20Coffee%20Table."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRODUCT 07 - BED -->
+                    <!-- ================================================= -->
+                    <article class="product-card group" data-category="bed">
+
+                        <div class="product-slider relative bg-[#EDE7DE] rounded-2xl overflow-hidden aspect-[4/5]"
+                            data-product-slider>
+
+                            <img src="./images/bed1-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+                            <img src="./images/bed1-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                            <img src="./images/bed1-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev
+                                class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">←</button>
+                            <button type="button" data-product-next
+                                class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">→</button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Bed
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Modern Wooden Bed
+                                </h3>
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">₹38,500</p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Modern%20Wooden%20Bed."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRODUCT 08 - BED -->
+                    <!-- ================================================= -->
+                    <article class="product-card group" data-category="bed">
+
+                        <div class="product-slider relative bg-[#EDE7DE] rounded-2xl overflow-hidden aspect-[4/5]"
+                            data-product-slider>
+
+                            <img src="./images/bed2-1.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+                            <img src="./images/bed2-2.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                            <img src="./images/bed2-3.jpeg"
+                                class="product-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+
+                            <button type="button" data-product-prev
+                                class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">←</button>
+                            <button type="button" data-product-next
+                                class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 rounded-full opacity-0 group-hover:opacity-100">→</button>
+
+                            <div class="absolute z-20 bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                                <button data-product-dot="0" class="product-dot w-6 h-1 bg-white rounded-full"></button>
+                                <button data-product-dot="1"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                                <button data-product-dot="2"
+                                    class="product-dot w-2 h-1 bg-white/50 rounded-full"></button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-5">
+
+                            <p class="text-xs uppercase tracking-[0.16em] text-[#9A9288] mb-2">
+                                Bed
+                            </p>
+
+                            <div class="flex justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-[#292826]">
+                                    Premium King Bed
+                                </h3>
+                                <p class="font-bold text-[#76543B] whitespace-nowrap">₹48,000</p>
+                            </div>
+
+                            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20the%20Premium%20King%20Bed."
+                                target="_blank" class="inline-flex mt-4 text-sm font-semibold text-[#76543B]">
+                                Enquire to Buy →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- View All -->
+                <div class="flex justify-center mt-14 lg:mt-16">
+
+                    <a href="#" class="inline-flex items-center gap-3
+                      bg-[#292826] text-white
+                      px-7 py-4 rounded-lg
+                      font-semibold
+                      hover:bg-[#76543B]
+                      transition-all duration-300">
+
+                        View All Products
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FEATURED PROJECTS ================= -->
+<section id="projects" class="bg-[#F7F4EF] py-20 lg:py-28">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between
+                    gap-6 mb-12 lg:mb-16">
+
+            <div>
+                <p class="text-[#76543B] text-sm font-bold uppercase
+                          tracking-[0.22em] mb-4">
+                    Selected Projects
+                </p>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl
+                           font-semibold tracking-tight text-[#292826]">
+                    Spaces We've
+                    <span class="text-[#76543B]">Transformed.</span>
+                </h2>
+            </div>
+
+            <p class="max-w-lg text-[#706C66]
+                      text-base lg:text-lg leading-relaxed">
+                Explore some of our custom furniture and interior work,
+                thoughtfully crafted to bring comfort, character and
+                timeless style to every space.
+            </p>
+
+        </div>
+
+
+        <!-- ================= PROJECT GRID ================= -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+
+            <!-- ============================================ -->
+            <!-- PROJECT 01 - LIVING ROOM -->
+            <!-- ============================================ -->
+
+            <div
+                class="project-slider group relative overflow-hidden rounded-2xl
+                       h-[450px] sm:h-[550px] lg:h-[650px]"
+                data-slider>
+
+                <!-- Images -->
+                <div class="absolute inset-0">
+
+                    <img
+                        src="./images/livingRoom1.jpeg"
+                        alt="Living Room Project 1"
+                        class="slider-image absolute inset-0
+                               w-full h-full object-cover
+                               opacity-100
+                               transition-opacity duration-700"
+                    />
+
+                    <img
+                        src="./images/livingRoom2.jpeg"
+                        alt="Living Room Project 2"
+                        class="slider-image absolute inset-0
+                               w-full h-full object-cover
+                               opacity-0
+                               transition-opacity duration-700"
+                    />
+
+                    <img
+                        src="./images/livingRoom3.jpeg"
+                        alt="Living Room Project 3"
+                        class="slider-image absolute inset-0
+                               w-full h-full object-cover
+                               opacity-0
+                               transition-opacity duration-700"
+                    />
+
+                </div>
+
+
+                <!-- Gradient -->
+                <div class="absolute inset-0 z-10
+                            bg-gradient-to-t from-black/80
+                            via-black/10 to-transparent">
+                </div>
+
+
+                <!-- Previous -->
+                <button
+                    type="button"
+                    data-prev
+                    aria-label="Previous image"
+                    class="absolute z-30 left-4 top-1/2
+                           -translate-y-1/2
+                           w-11 h-11 rounded-full
+                           bg-white/90 backdrop-blur
+                           flex items-center justify-center
+                           text-[#292826]
+                           opacity-0 group-hover:opacity-100
+                           hover:bg-white
+                           transition-all duration-300">
+
+                    ←
+
+                </button>
+
+
+                <!-- Next -->
+                <button
+                    type="button"
+                    data-next
+                    aria-label="Next image"
+                    class="absolute z-30 right-4 top-1/2
+                           -translate-y-1/2
+                           w-11 h-11 rounded-full
+                           bg-white/90 backdrop-blur
+                           flex items-center justify-center
+                           text-[#292826]
+                           opacity-0 group-hover:opacity-100
+                           hover:bg-white
+                           transition-all duration-300">
+
+                    →
+
+                </button>
+
+
+                <!-- Content -->
+                <div class="absolute z-20 bottom-0 left-0 right-0
+                            p-7 sm:p-9 lg:p-10">
+
+                    <span class="text-white/70 text-xs font-semibold
+                                 uppercase tracking-[0.2em]">
+                        Living Room
+                    </span>
+
+                    <h3 class="text-white text-2xl sm:text-3xl
+                               font-semibold mt-2">
+                        Modern Walnut Living Space
+                    </h3>
+
+                    <p class="text-white/70 mt-3 max-w-md leading-relaxed">
+                        Custom seating, handcrafted woodwork and refined
+                        finishes designed for a warm, elegant living space.
+                    </p>
+
+
+                    <!-- Dots -->
+                    <div class="flex gap-2 mt-6">
+
+                        <button
+                            type="button"
+                            data-dot="0"
+                            class="slider-dot w-7 h-[3px]
+                                   bg-white rounded-full
+                                   transition-all duration-300">
+                        </button>
+
+                        <button
+                            type="button"
+                            data-dot="1"
+                            class="slider-dot w-3 h-[3px]
+                                   bg-white/40 rounded-full
+                                   transition-all duration-300">
+                        </button>
+
+                        <button
+                            type="button"
+                            data-dot="2"
+                            class="slider-dot w-3 h-[3px]
+                                   bg-white/40 rounded-full
+                                   transition-all duration-300">
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================================ -->
+            <!-- RIGHT SIDE -->
+            <!-- ============================================ -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+
+
+                <!-- ======================================== -->
+                <!-- PROJECT 02 - BEDROOM -->
+                <!-- ======================================== -->
+
+                <div
+                    class="project-slider group relative overflow-hidden
+                           rounded-2xl h-[350px] lg:h-[312px]"
+                    data-slider>
+
+
+                    <!-- Images -->
+                    <div class="absolute inset-0">
+
+                        <img
+                            src="./images/bedroom1.jpeg"
+                            alt="Bedroom Project 1"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-100
+                                   transition-opacity duration-700"
+                        />
+
+                        <img
+                            src="./images/bedroom2.jpeg"
+                            alt="Bedroom Project 2"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-0
+                                   transition-opacity duration-700"
+                        />
+
+                        <img
+                            src="./images/bedroom3.jpeg"
+                            alt="Bedroom Project 3"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-0
+                                   transition-opacity duration-700"
+                        />
+
+                    </div>
+
+
+                    <!-- Gradient -->
+                    <div class="absolute inset-0 z-10
+                                bg-gradient-to-t from-black/80
+                                via-black/10 to-transparent">
+                    </div>
+
+
+                    <!-- Previous -->
+                    <button
+                        type="button"
+                        data-prev
+                        class="absolute z-30 left-4 top-1/2
+                               -translate-y-1/2
+                               w-10 h-10 rounded-full
+                               bg-white/90
+                               flex items-center justify-center
+                               opacity-0 group-hover:opacity-100
+                               transition-all duration-300">
+
+                        ←
+
+                    </button>
+
+
+                    <!-- Next -->
+                    <button
+                        type="button"
+                        data-next
+                        class="absolute z-30 right-4 top-1/2
+                               -translate-y-1/2
+                               w-10 h-10 rounded-full
+                               bg-white/90
+                               flex items-center justify-center
+                               opacity-0 group-hover:opacity-100
+                               transition-all duration-300">
+
+                        →
+
+                    </button>
+
+
+                    <!-- Content -->
+                    <div class="absolute z-20 bottom-0
+                                left-0 right-0 p-7">
+
+                        <span class="text-white/70 text-xs font-semibold
+                                     uppercase tracking-[0.2em]">
+                            Bedroom
+                        </span>
+
+                        <h3 class="text-white text-2xl font-semibold mt-2">
+                            Bespoke Bedroom Collection
+                        </h3>
+
+                        <p class="text-white/70 mt-2 text-sm max-w-md">
+                            Elegant custom furniture designed for comfort
+                            and everyday living.
+                        </p>
+
+
+                        <!-- Dots -->
+                        <div class="flex gap-2 mt-4">
+
+                            <button
+                                type="button"
+                                data-dot="0"
+                                class="slider-dot w-7 h-[3px]
+                                       bg-white rounded-full">
+                            </button>
+
+                            <button
+                                type="button"
+                                data-dot="1"
+                                class="slider-dot w-3 h-[3px]
+                                       bg-white/40 rounded-full">
+                            </button>
+
+                            <button
+                                type="button"
+                                data-dot="2"
+                                class="slider-dot w-3 h-[3px]
+                                       bg-white/40 rounded-full">
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ======================================== -->
+                <!-- PROJECT 03 - DINING -->
+                <!-- ======================================== -->
+
+                <div
+                    class="project-slider group relative overflow-hidden
+                           rounded-2xl h-[350px] lg:h-[312px]"
+                    data-slider>
+
+
+                    <!-- Images -->
+                    <div class="absolute inset-0">
+
+                        <img
+                            src="./images/Diningspace1.jpeg"
+                            alt="Dining Project 1"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-100
+                                   transition-opacity duration-700"
+                        />
+
+                        <img
+                            src="./images/Diningspace2.jpeg"
+                            alt="Dining Project 2"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-0
+                                   transition-opacity duration-700"
+                        />
+
+                        <img
+                            src="./images/Diningspace3.jpeg"
+                            alt="Dining Project 3"
+                            class="slider-image absolute inset-0
+                                   w-full h-full object-cover
+                                   opacity-0
+                                   transition-opacity duration-700"
+                        />
+
+                    </div>
+
+
+                    <!-- Gradient -->
+                    <div class="absolute inset-0 z-10
+                                bg-gradient-to-t from-black/80
+                                via-black/10 to-transparent">
+                    </div>
+
+
+                    <!-- Previous -->
+                    <button
+                        type="button"
+                        data-prev
+                        class="absolute z-30 left-4 top-1/2
+                               -translate-y-1/2
+                               w-10 h-10 rounded-full
+                               bg-white/90
+                               flex items-center justify-center
+                               opacity-0 group-hover:opacity-100
+                               transition-all duration-300">
+
+                        ←
+
+                    </button>
+
+
+                    <!-- Next -->
+                    <button
+                        type="button"
+                        data-next
+                        class="absolute z-30 right-4 top-1/2
+                               -translate-y-1/2
+                               w-10 h-10 rounded-full
+                               bg-white/90
+                               flex items-center justify-center
+                               opacity-0 group-hover:opacity-100
+                               transition-all duration-300">
+
+                        →
+
+                    </button>
+
+
+                    <!-- Content -->
+                    <div class="absolute z-20 bottom-0
+                                left-0 right-0 p-7">
+
+                        <span class="text-white/70 text-xs font-semibold
+                                     uppercase tracking-[0.2em]">
+                            Dining
+                        </span>
+
+                        <h3 class="text-white text-2xl font-semibold mt-2">
+                            Contemporary Dining Space
+                        </h3>
+
+                        <p class="text-white/70 mt-2 text-sm max-w-md">
+                            Premium wood craftsmanship paired with
+                            sophisticated modern detailing.
+                        </p>
+
+
+                        <!-- Dots -->
+                        <div class="flex gap-2 mt-4">
+
+                            <button
+                                type="button"
+                                data-dot="0"
+                                class="slider-dot w-7 h-[3px]
+                                       bg-white rounded-full">
+                            </button>
+
+                            <button
+                                type="button"
+                                data-dot="1"
+                                class="slider-dot w-3 h-[3px]
+                                       bg-white/40 rounded-full">
+                            </button>
+
+                            <button
+                                type="button"
+                                data-dot="2"
+                                class="slider-dot w-3 h-[3px]
+                                       bg-white/40 rounded-full">
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom CTA -->
+        <div class="flex justify-center mt-12">
+
+            <a href="#contact"
+               class="inline-flex items-center gap-3
+                      border border-[#76543B]
+                      text-[#76543B]
+                      px-7 py-4 rounded-lg
+                      font-semibold
+                      hover:bg-[#76543B]
+                      hover:text-white
+                      transition-all duration-300">
+
+                View All Projects
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        
+           <!-- ================= WHY CHOOSE US ================= -->
+<section id="why-us" class="bg-[#292826] py-20 lg:py-28 overflow-hidden">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- ================= HEADER ================= -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 mb-14 lg:mb-20">
+
+            <div>
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <span class="w-10 h-[1px] bg-[#C6A98B]"></span>
+
+                    <p class="text-[#C6A98B] text-xs sm:text-sm
+                              font-bold uppercase tracking-[0.22em]">
+                        Why Choose Us
+                    </p>
+
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl
+                           xl:text-[3.5rem] font-semibold
+                           leading-[1.1] tracking-tight text-white">
+
+                    Craftsmanship You Can See.
+                    <span class="block text-[#C6A98B]">
+                        Quality You Can Feel.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="flex lg:justify-end lg:items-end">
+
+                <p class="max-w-xl text-[#B8B3AD]
+                          text-base lg:text-lg leading-relaxed">
+
+                    Every piece is thoughtfully designed and carefully
+                    crafted with quality materials, skilled workmanship
+                    and attention to the details that make furniture
+                    truly exceptional.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CONTENT ================= -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]
+                    gap-10 lg:gap-16 items-stretch">
+
+
+            <!-- ================= IMAGE ================= -->
+            <div class="relative min-h-[450px] sm:min-h-[550px]
+                        lg:min-h-[650px] rounded-2xl overflow-hidden group">
+
+                <img
+                    src="./images/whyChooseUs.png"
+                    alt="Furniture craftsmanship"
+                    class="absolute inset-0 w-full h-full object-cover
+                           group-hover:scale-105
+                           transition-transform duration-700"
+                />
+
+
+                <!-- Image Overlay -->
+                <div class="absolute inset-0
+                            bg-gradient-to-t
+                            from-black/60
+                            via-black/5
+                            to-transparent">
+                </div>
+
+
+                <!-- Experience Card -->
+                <div class="absolute left-5 bottom-5
+                            sm:left-8 sm:bottom-8
+                            bg-[#F7F4EF]/95 backdrop-blur-md
+                            rounded-xl
+                            p-5 sm:p-6
+                            max-w-[250px]">
+
+                    <div class="flex items-end gap-2">
+
+                        <span class="text-4xl sm:text-5xl
+                                     font-semibold text-[#76543B]">
+                            10+
+                        </span>
+
+                        <span class="text-[#76543B] font-semibold mb-1">
+                            Years
+                        </span>
+
+                    </div>
+
+                    <p class="mt-2 text-sm text-[#706C66] leading-relaxed">
+                        Creating furniture with passion,
+                        precision and lasting quality.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FEATURES ================= -->
+            <div class="flex flex-col justify-center">
+
+
+                <!-- 01 -->
+                <div class="group py-7 lg:py-8
+                            border-b border-white/10">
+
+                    <div class="grid grid-cols-[50px_1fr] sm:grid-cols-[70px_1fr]
+                                gap-4 sm:gap-6">
+
+                        <span class="text-[#C6A98B]
+                                     text-sm font-semibold">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-xl sm:text-2xl
+                                       font-semibold text-white
+                                       group-hover:text-[#C6A98B]
+                                       transition-colors duration-300">
+                                Premium Materials
+                            </h3>
+
+                            <p class="mt-3 text-[#A9A49E]
+                                      leading-relaxed max-w-lg">
+                                Carefully selected wood, fabrics and
+                                finishing materials chosen for beauty,
+                                strength and long-term durability.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 02 -->
+                <div class="group py-7 lg:py-8
+                            border-b border-white/10">
+
+                    <div class="grid grid-cols-[50px_1fr] sm:grid-cols-[70px_1fr]
+                                gap-4 sm:gap-6">
+
+                        <span class="text-[#C6A98B]
+                                     text-sm font-semibold">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-xl sm:text-2xl
+                                       font-semibold text-white
+                                       group-hover:text-[#C6A98B]
+                                       transition-colors duration-300">
+                                Made to Measure
+                            </h3>
+
+                            <p class="mt-3 text-[#A9A49E]
+                                      leading-relaxed max-w-lg">
+                                Furniture designed around your space,
+                                dimensions and style instead of forcing
+                                your home around standard sizes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 03 -->
+                <div class="group py-7 lg:py-8
+                            border-b border-white/10">
+
+                    <div class="grid grid-cols-[50px_1fr] sm:grid-cols-[70px_1fr]
+                                gap-4 sm:gap-6">
+
+                        <span class="text-[#C6A98B]
+                                     text-sm font-semibold">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-xl sm:text-2xl
+                                       font-semibold text-white
+                                       group-hover:text-[#C6A98B]
+                                       transition-colors duration-300">
+                                Expert Craftsmanship
+                            </h3>
+
+                            <p class="mt-3 text-[#A9A49E]
+                                      leading-relaxed max-w-lg">
+                                Skilled workmanship and attention to
+                                every joint, edge, texture and finish
+                                ensure a refined final result.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 04 -->
+                <div class="group py-7 lg:py-8">
+
+                    <div class="grid grid-cols-[50px_1fr] sm:grid-cols-[70px_1fr]
+                                gap-4 sm:gap-6">
+
+                        <span class="text-[#C6A98B]
+                                     text-sm font-semibold">
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-xl sm:text-2xl
+                                       font-semibold text-white
+                                       group-hover:text-[#C6A98B]
+                                       transition-colors duration-300">
+                                Built to Last
+                            </h3>
+
+                            <p class="mt-3 text-[#A9A49E]
+                                      leading-relaxed max-w-lg">
+                                We focus on durability as much as design,
+                                creating furniture made for years of
+                                comfortable everyday living.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BOTTOM STATS ================= -->
+        <div class="grid grid-cols-2 lg:grid-cols-4
+                    border-t border-white/10 mt-14 lg:mt-20 pt-10
+                    gap-y-10">
+
+            <div class="lg:border-r border-white/10 lg:px-8 lg:first:pl-0">
+
+                <p class="text-3xl sm:text-4xl font-semibold text-white">
+                    10+
+                </p>
+
+                <p class="text-sm text-[#A9A49E] mt-2">
+                    Years Experience
+                </p>
+
+            </div>
+
+
+            <div class="lg:border-r border-white/10 lg:px-8">
+
+                <p class="text-3xl sm:text-4xl font-semibold text-white">
+                    500+
+                </p>
+
+                <p class="text-sm text-[#A9A49E] mt-2">
+                    Projects Completed
+                </p>
+
+            </div>
+
+
+            <div class="lg:border-r border-white/10 lg:px-8">
+
+                <p class="text-3xl sm:text-4xl font-semibold text-white">
+                    100%
+                </p>
+
+                <p class="text-sm text-[#A9A49E] mt-2">
+                    Custom Crafted
+                </p>
+
+            </div>
+
+
+            <div class="lg:px-8">
+
+                <p class="text-3xl sm:text-4xl font-semibold text-white">
+                    4.9/5
+                </p>
+
+                <p class="text-sm text-[#A9A49E] mt-2">
+                    Customer Rating
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= OUR PROCESS ================= -->
+<section id="process" class="bg-[#F7F4EF] py-20 lg:py-28">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- Header -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 mb-14 lg:mb-20">
+
+            <div>
+                <p class="text-[#76543B] text-sm font-bold uppercase
+                          tracking-[0.22em] mb-4">
+                    Our Process
+                </p>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl
+                           font-semibold tracking-tight
+                           leading-tight text-[#292826]">
+
+                    From Your Idea to
+                    <span class="text-[#76543B]">
+                        Your Space.
+                    </span>
+
+                </h2>
+            </div>
+
+            <div class="lg:flex lg:items-end lg:justify-end">
+
+                <p class="max-w-lg text-[#706C66]
+                          text-base lg:text-lg leading-relaxed">
+                    A simple, transparent process that takes your
+                    furniture from the first conversation to the
+                    final installation in your home.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
+                    border-t border-[#D8D0C5]">
+
+
+            <!-- 01 -->
+            <div class="group relative py-10 lg:py-12
+                        lg:pr-8 border-b lg:border-b-0
+                        border-[#D8D0C5]">
+
+                <span class="text-[#B9A999] text-sm font-semibold">
+                    01
+                </span>
+
+                <div class="w-12 h-12 mt-8 rounded-full
+                            bg-[#E9E1D7]
+                            flex items-center justify-center
+                            text-[#76543B]
+                            group-hover:bg-[#76543B]
+                            group-hover:text-white
+                            transition-all duration-300">
+
+                    <!-- Chat Icon -->
+                    <svg class="w-5 h-5"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M8 10h8M8 14h5M21 12
+                                 a9 9 0 11-4-7.5L21 3v9z" />
+
+                    </svg>
+
+                </div>
+
+                <h3 class="text-xl lg:text-2xl
+                           font-semibold text-[#292826] mt-6">
+                    Consultation
+                </h3>
+
+                <p class="text-[#706C66] leading-relaxed mt-3">
+                    Tell us about your space, requirements,
+                    style preferences and the furniture you
+                    have in mind.
+                </p>
+
+            </div>
+
+
+            <!-- 02 -->
+            <div class="group relative py-10 lg:py-12
+                        lg:px-8 border-b lg:border-b-0
+                        lg:border-l border-[#D8D0C5]">
+
+                <span class="text-[#B9A999] text-sm font-semibold">
+                    02
+                </span>
+
+                <div class="w-12 h-12 mt-8 rounded-full
+                            bg-[#E9E1D7]
+                            flex items-center justify-center
+                            text-[#76543B]
+                            group-hover:bg-[#76543B]
+                            group-hover:text-white
+                            transition-all duration-300">
+
+                    <!-- Pencil Icon -->
+                    <svg class="w-5 h-5"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M16.862 3.487a2.25 2.25 0
+                                 113.182 3.182L8.25 18.463
+                                 3 21l2.537-5.25L16.862 3.487z" />
+
+                    </svg>
+
+                </div>
+
+                <h3 class="text-xl lg:text-2xl
+                           font-semibold text-[#292826] mt-6">
+                    Design
+                </h3>
+
+                <p class="text-[#706C66] leading-relaxed mt-3">
+                    We develop the design, dimensions,
+                    materials and finishes around your
+                    space and preferences.
+                </p>
+
+            </div>
+
+
+            <!-- 03 -->
+            <div class="group relative py-10 lg:py-12
+                        lg:px-8 border-b lg:border-b-0
+                        lg:border-l border-[#D8D0C5]">
+
+                <span class="text-[#B9A999] text-sm font-semibold">
+                    03
+                </span>
+
+                <div class="w-12 h-12 mt-8 rounded-full
+                            bg-[#E9E1D7]
+                            flex items-center justify-center
+                            text-[#76543B]
+                            group-hover:bg-[#76543B]
+                            group-hover:text-white
+                            transition-all duration-300">
+
+                    <!-- Tool Icon -->
+                    <svg class="w-5 h-5"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M14.7 6.3a4 4 0 01-5
+                                 5L4 17l3 3 5.7-5.7
+                                 a4 4 0 005-5l-3 3-3-3 3-3z" />
+
+                    </svg>
+
+                </div>
+
+                <h3 class="text-xl lg:text-2xl
+                           font-semibold text-[#292826] mt-6">
+                    Craftsmanship
+                </h3>
+
+                <p class="text-[#706C66] leading-relaxed mt-3">
+                    Our craftsmen bring the approved design
+                    to life with careful construction and
+                    premium finishing.
+                </p>
+
+            </div>
+
+
+            <!-- 04 -->
+            <div class="group relative py-10 lg:py-12
+                        lg:pl-8 lg:border-l border-[#D8D0C5]">
+
+                <span class="text-[#B9A999] text-sm font-semibold">
+                    04
+                </span>
+
+                <div class="w-12 h-12 mt-8 rounded-full
+                            bg-[#E9E1D7]
+                            flex items-center justify-center
+                            text-[#76543B]
+                            group-hover:bg-[#76543B]
+                            group-hover:text-white
+                            transition-all duration-300">
+
+                    <!-- Home Icon -->
+                    <svg class="w-5 h-5"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M3 11.5L12 4l9 7.5
+                                 M5 10v10h14V10
+                                 M9 20v-6h6v6" />
+
+                    </svg>
+
+                </div>
+
+                <h3 class="text-xl lg:text-2xl
+                           font-semibold text-[#292826] mt-6">
+                    Delivery & Installation
+                </h3>
+
+                <p class="text-[#706C66] leading-relaxed mt-3">
+                    Your finished furniture is carefully
+                    delivered and professionally installed
+                    in your space.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+        <div class="mt-12 lg:mt-16
+                    flex flex-col sm:flex-row
+                    items-center justify-between
+                    gap-6">
+
+            <p class="text-[#706C66]">
+                Have a furniture idea in mind?
+                <span class="font-semibold text-[#292826]">
+                    Let's bring it to life.
+                </span>
+            </p>
+
+            <a href="https://wa.me/918108582270?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20custom%20furniture%20project."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-3
+                      bg-[#76543B] text-white
+                      px-7 py-4 rounded-lg
+                      font-semibold
+                      hover:bg-[#5F422F]
+                      transition-colors duration-300">
+
+                Start Your Project
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials" class="bg-[#EEE8DF] py-20 lg:py-28">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- ================= HEADER ================= -->
+        <div class="flex flex-col lg:flex-row
+                    lg:items-end lg:justify-between
+                    gap-6 mb-12 lg:mb-16">
+
+            <div class="max-w-2xl">
+
+                <p class="text-[#76543B] text-sm font-bold uppercase
+                          tracking-[0.22em] mb-4">
+                    Client Stories
+                </p>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl
+                           font-semibold tracking-tight
+                           leading-tight text-[#292826]">
+
+                    Loved by People Who
+                    <span class="text-[#76543B]">
+                        Love Their Space.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <p class="max-w-lg text-[#706C66]
+                      text-base lg:text-lg leading-relaxed">
+
+                See what our customers say about their experience,
+                from the first design conversation to the final
+                piece in their home.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= TESTIMONIAL CARDS ================= -->
+        <div class="grid grid-cols-1 md:grid-cols-2
+                    lg:grid-cols-3 gap-6">
+
+
+            <!-- ================= REVIEW 01 ================= -->
+            <article
+                class="bg-[#F7F4EF] rounded-2xl
+                       p-7 sm:p-8 lg:p-9
+                       flex flex-col
+                       transition-transform duration-300
+                       hover:-translate-y-1">
+
+
+                <!-- Top -->
+                <div class="flex items-center justify-between">
+
+                    <!-- Stars -->
+                    <div class="flex gap-1 text-[#B8865B]">
+
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+
+                    </div>
+
+
+                    <!-- Quote -->
+                    <span class="text-5xl font-serif
+                                 leading-none text-[#D8CEC2]">
+                        “
+                    </span>
+
+                </div>
+
+
+                <!-- Review -->
+                <p class="text-[#4D4A46]
+                          text-lg sm:text-xl
+                          leading-relaxed mt-7 flex-grow">
+
+                    “The finishing and attention to detail were
+                    excellent. The furniture fits our living room
+                    perfectly and feels completely made for the space.”
+
+                </p>
+
+
+                <!-- Divider -->
+                <div class="h-px bg-[#DDD5CB] my-8"></div>
+
+
+                <!-- Customer -->
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="./images/customer1.jpg"
+                        alt="Customer"
+                        class="w-12 h-12 rounded-full object-cover"
+                    />
+
+                    <div>
+
+                        <h3 class="font-semibold text-[#292826]">
+                            Rahul Mehta
+                        </h3>
+
+                        <p class="text-sm text-[#8A837B] mt-1">
+                            Custom Living Room
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================= REVIEW 02 ================= -->
+            <article
+                class="bg-[#292826] rounded-2xl
+                       p-7 sm:p-8 lg:p-9
+                       flex flex-col
+                       transition-transform duration-300
+                       hover:-translate-y-1">
+
+
+                <div class="flex items-center justify-between">
+
+                    <div class="flex gap-1 text-[#C6A98B]">
+
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+
+                    </div>
+
+                    <span class="text-5xl font-serif
+                                 leading-none text-white/20">
+                        “
+                    </span>
+
+                </div>
+
+
+                <p class="text-white/90
+                          text-lg sm:text-xl
+                          leading-relaxed mt-7 flex-grow">
+
+                    “From design to installation, everything was
+                    handled professionally. They understood exactly
+                    what we wanted and delivered a beautiful result.”
+
+                </p>
+
+
+                <div class="h-px bg-white/10 my-8"></div>
+
+
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="./images/customer2.jpg"
+                        alt="Customer"
+                        class="w-12 h-12 rounded-full object-cover"
+                    />
+
+                    <div>
+
+                        <h3 class="font-semibold text-white">
+                            Priya Shah
+                        </h3>
+
+                        <p class="text-sm text-white/50 mt-1">
+                            Bedroom Furniture
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================= REVIEW 03 ================= -->
+            <article
+                class="bg-[#F7F4EF] rounded-2xl
+                       p-7 sm:p-8 lg:p-9
+                       flex flex-col
+                       transition-transform duration-300
+                       hover:-translate-y-1">
+
+
+                <div class="flex items-center justify-between">
+
+                    <div class="flex gap-1 text-[#B8865B]">
+
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+
+                    </div>
+
+                    <span class="text-5xl font-serif
+                                 leading-none text-[#D8CEC2]">
+                        “
+                    </span>
+
+                </div>
+
+
+                <p class="text-[#4D4A46]
+                          text-lg sm:text-xl
+                          leading-relaxed mt-7 flex-grow">
+
+                    “The quality of the wood and craftsmanship
+                    really stands out. Our dining table looks
+                    beautiful and feels incredibly solid.”
+
+                </p>
+
+
+                <div class="h-px bg-[#DDD5CB] my-8"></div>
+
+
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="./images/customer3.jpg"
+                        alt="Customer"
+                        class="w-12 h-12 rounded-full object-cover"
+                    />
+
+                    <div>
+
+                        <h3 class="font-semibold text-[#292826]">
+                            Arjun Patel
+                        </h3>
+
+                        <p class="text-sm text-[#8A837B] mt-1">
+                            Custom Dining Table
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- ================= REVIEW SUMMARY ================= -->
+        <div class="mt-12 lg:mt-16
+                    pt-8 border-t border-[#D8D0C5]
+                    flex flex-col sm:flex-row
+                    sm:items-center sm:justify-between
+                    gap-6">
+
+
+            <div class="flex items-center gap-4">
+
+                <span class="text-4xl font-semibold text-[#292826]">
+                    4.9
+                </span>
+
+                <div>
+
+                    <div class="flex text-[#B8865B] text-lg">
+                        ★★★★★
+                    </div>
+
+                    <p class="text-sm text-[#706C66] mt-1">
+                        Based on customer reviews
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a href="#contact"
+               class="inline-flex items-center gap-3
+                      text-[#76543B] font-semibold
+                      hover:gap-4
+                      transition-all duration-300">
+
+                Read More Customer Stories
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>  
+
+
+
+<!-- ================= FINAL CTA / CONTACT ================= -->
+<section id="contact" class="bg-[#F7F4EF] py-20 lg:py-28">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- CTA -->
+        <div class="relative overflow-hidden rounded-[1.5rem]
+                    min-h-[520px] lg:min-h-[600px]
+                    flex items-center">
+
+            <!-- Background Image -->
+            <img
+                src="./images/contact-bg.png"
+                alt="Luxury custom furniture interior"
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/55"></div>
+
+            <!-- Soft Gradient -->
+            <div class="absolute inset-0
+                        bg-gradient-to-r
+                        from-black/75
+                        via-black/40
+                        to-black/10">
+            </div>
+
+
+            <!-- ================= CONTENT ================= -->
+            <div class="relative z-10
+                        w-full max-w-3xl
+                        px-7 py-16
+                        sm:px-12
+                        lg:px-16 lg:py-20">
+
+                <!-- Label -->
+                <div class="flex items-center gap-3 mb-6">
+
+                    <span class="w-10 h-[1px] bg-[#D4B99F]"></span>
+
+                    <p class="text-[#D4B99F]
+                              text-xs sm:text-sm
+                              uppercase font-bold
+                              tracking-[0.22em]">
+                        Let's Create Together
+                    </p>
+
+                </div>
+
+
+                <!-- Heading -->
+                <h2 class="text-4xl sm:text-5xl
+                           lg:text-6xl
+                           font-semibold tracking-tight
+                           leading-[1.08]
+                           text-white">
+
+                    Ready to Transform
+                    <span class="block text-[#D4B99F]">
+                        Your Space?
+                    </span>
+
+                </h2>
+
+
+                <!-- Description -->
+                <p class="max-w-xl mt-6
+                          text-white/70
+                          text-base sm:text-lg
+                          leading-relaxed">
+
+                    Whether you're looking for a custom piece
+                    or planning furniture for an entire space,
+                    we'd love to hear your ideas.
+
+                </p>
+
+
+                <!-- ================= BUTTONS ================= -->
+                <div class="flex flex-col sm:flex-row
+                            gap-3 sm:gap-4 mt-9">
+
+
+                    <!-- WhatsApp -->
+                    <a
+                        href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20your%20furniture%20services.%20I%20would%20like%20to%20discuss%20my%20requirements."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center
+                               justify-center gap-3
+                               bg-[#76543B]
+                               text-white
+                               px-7 py-4
+                               rounded-lg
+                               font-semibold
+                               hover:bg-[#65452F]
+                               transition-all duration-300">
+
+                        <!-- WhatsApp Icon -->
+                        <svg
+                            class="w-5 h-5"
+                            viewBox="0 0 24 24"
+                            fill="currentColor">
+
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967
+                            -.273-.099-.471-.148-.67.15-.197.297-.767.966
+                            -.94 1.164-.173.198-.347.223-.644.074-.297-.148
+                            -1.255-.463-2.39-1.475-.883-.788-1.48-1.761
+                            -1.653-2.059-.173-.297-.018-.458.13-.606.134
+                            -.133.298-.347.446-.52.149-.174.198-.298.298
+                            -.497.099-.198.05-.371-.025-.52-.075-.149-.669
+                            -1.612-.916-2.207-.242-.579-.487-.5-.669-.51
+                            -.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792
+                            .372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875
+                            1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709
+                            .306 1.262.489 1.693.625.712.227 1.36.195
+                            1.872.118.571-.085 1.758-.719 2.006-1.413.248
+                            -.694.248-1.289.173-1.413-.074-.124-.272-.198
+                            -.57-.347m-5.421 7.403h-.004a9.87 9.87 0
+                            01-5.031-1.378l-.361-.214-3.741.981.998-3.648
+                            -.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45
+                            4.436-9.884 9.888-9.884 2.64 0 5.122 1.03
+                            6.988 2.898a9.825 9.825 0 012.893 7.002c-.003
+                            5.45-4.437 9.877-9.885 9.877"/>
+                        </svg>
+
+                        Chat on WhatsApp
+
+                    </a>
+
+
+                    <!-- Phone -->
+                    <a
+                        href="tel:+918108582270"
+                        class="inline-flex items-center
+                               justify-center gap-3
+                               bg-white
+                               text-[#292826]
+                               px-7 py-4
+                               rounded-lg
+                               font-semibold
+                               hover:bg-[#F7F4EF]
+                               transition-all duration-300">
+
+                        <!-- Phone Icon -->
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M3 5a2 2 0 012-2h3.28
+                                   a2 2 0 011.94 1.515l.7 2.8
+                                   a2 2 0 01-.57 1.94l-1.7 1.7
+                                   a16 16 0 006.4 6.4l1.7-1.7
+                                   a2 2 0 011.94-.57l2.8.7
+                                   A2 2 0 0121 17.72V21
+                                   a2 2 0 01-2 2h-1
+                                   C9.716 23 3 16.284 3 8V5z"
+                            />
+
+                        </svg>
+
+                        Call Us
+
+                    </a>
+
+                </div>
+
+
+                <!-- Small Trust Text -->
+                <div class="flex flex-wrap items-center
+                            gap-x-6 gap-y-3 mt-8
+                            text-sm text-white/60">
+
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#D4B99F]">✓</span>
+                        Free Consultation
+                    </span>
+
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#D4B99F]">✓</span>
+                        Custom Designs
+                    </span>
+
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#D4B99F]">✓</span>
+                        No Obligation
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#292826] text-white">
+
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- Main Footer -->
+        <div class="py-16 lg:py-20
+                    grid grid-cols-1 sm:grid-cols-2
+                    lg:grid-cols-[1.5fr_0.7fr_0.7fr_1fr]
+                    gap-12 lg:gap-16">
+
+
+            <!-- ================= BRAND ================= -->
+            <div>
+
+                <!-- Replace with your logo -->
+                <a href="#" class="inline-block">
+                    <img
+                        src="./images/logo.png"
+                        alt="Furniture Logo"
+                        class="h-10 w-auto brightness-0 invert"
+                    >
+                </a>
+
+                <p class="mt-6 max-w-sm
+                          text-[#AAA59F]
+                          leading-relaxed">
+
+                    Thoughtfully designed furniture,
+                    handcrafted with premium materials
+                    to bring comfort, character and
+                    lasting beauty to your space.
+
+                </p>
+
+
+                <!-- Social -->
+                <div class="flex items-center gap-3 mt-7">
+
+                    <!-- Instagram -->
+                    <a href="#"
+                       aria-label="Instagram"
+                       class="w-10 h-10 rounded-full
+                              border border-white/15
+                              flex items-center justify-center
+                              text-white/70
+                              hover:bg-[#76543B]
+                              hover:border-[#76543B]
+                              hover:text-white
+                              transition-all duration-300">
+
+                        <svg class="w-4 h-4"
+                             fill="none"
+                             stroke="currentColor"
+                             viewBox="0 0 24 24">
+
+                            <rect x="3" y="3"
+                                  width="18" height="18"
+                                  rx="5"
+                                  stroke-width="1.8"/>
+
+                            <circle cx="12" cy="12"
+                                    r="4"
+                                    stroke-width="1.8"/>
+
+                            <circle cx="17.5" cy="6.5"
+                                    r="1"
+                                    fill="currentColor"
+                                    stroke="none"/>
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- Facebook -->
+                    <a href="#"
+                       aria-label="Facebook"
+                       class="w-10 h-10 rounded-full
+                              border border-white/15
+                              flex items-center justify-center
+                              text-white/70
+                              hover:bg-[#76543B]
+                              hover:border-[#76543B]
+                              hover:text-white
+                              transition-all duration-300">
+
+                        <span class="font-bold">f</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LINKS ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Explore
+                </h3>
+
+                <ul class="space-y-4 text-[#AAA59F]">
+
+                    <li>
+                        <a href="#"
+                           class="hover:text-white transition-colors">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services"
+                           class="hover:text-white transition-colors">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#products"
+                           class="hover:text-white transition-colors">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects"
+                           class="hover:text-white transition-colors">
+                            Projects
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ================= COMPANY ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Company
+                </h3>
+
+                <ul class="space-y-4 text-[#AAA59F]">
+
+                    <li>
+                        <a href="#why-us"
+                           class="hover:text-white transition-colors">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#process"
+                           class="hover:text-white transition-colors">
+                            Our Process
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#testimonials"
+                           class="hover:text-white transition-colors">
+                            Reviews
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact"
+                           class="hover:text-white transition-colors">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ================= CONTACT ================= -->
+            <div>
+
+                <h3 class="font-semibold text-white mb-6">
+                    Get in Touch
+                </h3>
+
+
+                <p class="text-[#AAA59F]
+                          text-sm leading-relaxed mb-5">
+
+                    Have a project in mind?
+                    Talk to us about your furniture
+                    requirements.
+
+                </p>
+
+
+                <!-- Phone -->
+                <a href="tel:+918108582270"
+                   class="block text-white
+                          font-medium
+                          hover:text-[#C6A98B]
+                          transition-colors">
+
+                    +91 81085 82270
+
+                </a>
+
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/918108582270?text=Hi%2C%20I%20am%20interested%20in%20your%20furniture%20services."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2
+                          mt-6
+                          text-[#C6A98B]
+                          font-semibold
+                          hover:text-white
+                          transition-colors">
+
+                    Chat on WhatsApp
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BOTTOM ================= -->
+        <div class="border-t border-white/10
+                    py-6
+                    flex flex-col sm:flex-row
+                    sm:items-center sm:justify-between
+                    gap-4
+                    text-sm text-[#77736E]">
+
+            <p>
+                © 2026 Your Furniture Company. All rights reserved.
+            </p>
+
+
+            <div class="flex items-center gap-6">
+
+                <a href="#"
+                   class="hover:text-white transition-colors">
+                    Privacy Policy
+                </a>
+
+                <a href="#"
+                   class="hover:text-white transition-colors">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- Main JavaScript -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
