@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>All Products | Furniture</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-[#F7F4EF] text-[#292826]">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="sticky top-0 z-50 bg-[#292826]">
+
+        <nav
+            class="max-w-[1440px] mx-auto
+                   px-6 sm:px-8 lg:px-12 xl:px-16
+                   h-20
+                   flex items-center justify-between">
+
+            <a href="./index.html">
+
+                <img
+                    src="./images/logo.png"
+                    alt="Furniture"
+                    class="h-9 w-auto"
+                >
+
+            </a>
+
+
+            <div class="hidden md:flex items-center gap-8">
+
+                <a
+                    href="./index.html"
+                    class="text-sm font-semibold text-white/70
+                           hover:text-white transition">
+                    Home
+                </a>
+
+                <a
+                    href="./index.html#services"
+                    class="text-sm font-semibold text-white/70
+                           hover:text-white transition">
+                    Services
+                </a>
+
+                <a
+                    href="./products.html"
+                    class="text-sm font-semibold text-white">
+                    Products
+                </a>
+
+                <a
+                    href="./index.html#projects"
+                    class="text-sm font-semibold text-white/70
+                           hover:text-white transition">
+                    Projects
+                </a>
+
+                <a
+                    href="./index.html#contact"
+                    class="text-sm font-semibold text-white/70
+                           hover:text-white transition">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <a
+                href="./index.html#contact"
+                class="hidden sm:inline-flex
+                       bg-[#76543B]
+                       text-white
+                       px-5 py-3
+                       rounded-lg
+                       text-sm font-semibold
+                       hover:bg-[#60432F]
+                       transition">
+
+                Get in Touch
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================================================= -->
+    <!-- PAGE HERO -->
+    <!-- ================================================= -->
+
+    <section class="bg-[#292826]">
+
+        <div
+            class="max-w-[1440px] mx-auto
+                   px-6 sm:px-8 lg:px-12 xl:px-16
+                   py-16 lg:py-24">
+
+            <div class="max-w-3xl">
+
+                <p
+                    class="text-[#C6A98B]
+                           text-xs sm:text-sm
+                           font-bold uppercase
+                           tracking-[0.22em] mb-5">
+
+                    Our Collection
+
+                </p>
+
+
+                <h1
+                    class="text-4xl sm:text-5xl
+                           lg:text-6xl
+                           font-semibold
+                           leading-tight
+                           tracking-tight
+                           text-white">
+
+                    Furniture Designed
+                    <span class="text-[#C6A98B]">
+                        for Your Space.
+                    </span>
+
+                </h1>
+
+
+                <p
+                    class="mt-6
+                           text-white/60
+                           text-base lg:text-lg
+                           leading-relaxed
+                           max-w-2xl">
+
+                    Explore our collection of thoughtfully designed
+                    furniture, from comfortable sofas and elegant
+                    tables to beds, chairs and complete living spaces.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- PRODUCTS -->
+    <!-- ================================================= -->
+
+    <main>
+
+        <section class="py-12 lg:py-20">
+
+            <div
+                class="max-w-[1440px] mx-auto
+                       px-6 sm:px-8 lg:px-12 xl:px-16">
+
+
+                <!-- ========================================= -->
+                <!-- SEARCH -->
+                <!-- ========================================= -->
+
+                <div class="max-w-3xl mx-auto">
+
+                    <div
+                        class="relative">
+
+                        <input
+                            id="product-search"
+                            type="search"
+                            placeholder="Search sofas, tables, beds..."
+                            autocomplete="off"
+                            class="w-full
+                                   h-14 sm:h-16
+                                   pl-14 pr-5
+                                   rounded-xl
+                                   bg-white
+                                   border border-[#DDD5CB]
+                                   text-[#292826]
+                                   placeholder:text-[#A39C94]
+                                   outline-none
+                                   focus:border-[#76543B]
+                                   focus:ring-2
+                                   focus:ring-[#76543B]/10
+                                   transition"
+                        >
+
+
+                        <!-- Search Icon -->
+                        <svg
+                            class="absolute left-5 top-1/2
+                                   -translate-y-1/2
+                                   w-5 h-5
+                                   text-[#8B857E]"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="m21 21-4.35-4.35
+                                   M19 11a8 8 0 1 1-16 0
+                                   8 8 0 0 1 16 0Z"
+                            />
+
+                        </svg>
+
+
+                        <!-- Clear -->
+                        <button
+                            id="clear-search"
+                            type="button"
+                            class="hidden
+                                   absolute right-4 top-1/2
+                                   -translate-y-1/2
+                                   text-[#8B857E]
+                                   hover:text-[#292826]">
+
+                            ✕
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- CATEGORY FILTER -->
+                <!-- ========================================= -->
+
+                <div
+                    id="category-filters"
+                    class="flex gap-3
+                           overflow-x-auto
+                           pb-2 mt-8
+                           justify-start lg:justify-center
+                           scrollbar-hide">
+
+                    <!-- JS creates categories -->
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- RESULT INFO -->
+                <!-- ========================================= -->
+
+                <div
+                    class="flex items-center
+                           justify-between
+                           gap-5
+                           mt-10 mb-8">
+
+                    <div>
+
+                        <p
+                            id="result-title"
+                            class="text-2xl sm:text-3xl
+                                   font-semibold">
+                            All Products
+                        </p>
+
+                        <p
+                            id="result-count"
+                            class="text-sm
+                                   text-[#8B857E]
+                                   mt-1">
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- PRODUCT SECTIONS -->
+                <!-- ========================================= -->
+
+                <div
+                    id="product-sections"
+                    class="space-y-20 lg:space-y-28">
+
+                    <!-- JS -->
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- NO RESULTS -->
+                <!-- ========================================= -->
+
+                <div
+                    id="no-results"
+                    class="hidden
+                           text-center
+                           py-24">
+
+                    <div
+                        class="w-16 h-16
+                               mx-auto
+                               rounded-full
+                               bg-[#EDE7DE]
+                               flex items-center
+                               justify-center
+                               text-2xl">
+
+                        🔍
+
+                    </div>
+
+                    <h2
+                        class="text-2xl
+                               font-semibold
+                               mt-6">
+
+                        No products found
+
+                    </h2>
+
+                    <p
+                        class="text-[#706C66]
+                               mt-2">
+
+                        Try another product name or category.
+
+                    </p>
+
+                    <button
+                        id="reset-products"
+                        type="button"
+                        class="mt-6
+                               px-6 py-3
+                               rounded-lg
+                               bg-[#76543B]
+                               text-white
+                               font-semibold">
+
+                        View All Products
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer class="bg-[#292826] text-white">
+
+        <div
+            class="max-w-[1440px] mx-auto
+                   px-6 sm:px-8 lg:px-12 xl:px-16
+                   py-10">
+
+            <div
+                class="flex flex-col sm:flex-row
+                       justify-between
+                       gap-5">
+
+                <p class="text-sm text-white/40">
+                    © 2026 Furniture. All rights reserved.
+                </p>
+
+                <a
+                    href="https://wa.me/918108582270"
+                    target="_blank"
+                    class="text-sm
+                           text-[#C6A98B]
+                           font-semibold">
+
+                    WhatsApp: +91 81085 82270
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="./products.js"></script>
+
+</body>
+
+</html>
