@@ -902,7 +902,7 @@ function renderRelatedProducts() {
     card.innerHTML = `
 
                 <a
-                    href="./product.html?id=${item.id}"
+                    href="./productView.html?id=${encodeURIComponent(item.id)}"
                     class="block">
 
                     <div
